@@ -1,0 +1,80 @@
+name: Run Test by Manual Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      kreversion:
+        description: 'KRE Version'
+        required: true
+        default: 8.6.9
+        type: choice
+        options:
+          - 8.6.9
+          - 8.6.8
+          - 8.6.6
+          - 8.6.5
+      testsuite:
+        description: 'Test Suite'
+        required: true
+        default: Healthcare Smoke Test
+        type: choice
+        options:
+          - Healthcare Smoke Test
+          - Healthcare Regression Test
+          - API Regression Test
+      runner:
+        description: 'Runner'
+        required: true
+        default: windows-latest
+        type: choice
+        options:
+          - windows-latest
+          - windows-2019
+          - macos-13
+          - macos-latest
+          - macos-11
+          - ubuntu-latest
+          - ubuntu-20.04
+      browser:
+        description: 'Browser'
+        required: true
+        default: Chrome
+        type: choice
+        options:
+          - Chrome
+          - Firefox
+          - IE
+          - Safari
+          - Edge
+          - Edge Chromium
+    
+
+jobs:
+  manual:
+    name: Execute test by manual trigger
+    if: ${{ github.event.inputs.browser !='' }}
+    runs-on: ${{ github.event.inputs.runner }}
+    steps:
+
+    - name: Set longpaths globally
+      run: |
+        git config --global core.longpaths true
+
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Execute test
+      id: execute-test-manual
+      uses: katalon-studio/katalon-studio-github-action@v3.0
+      with:
+          version: ${{ github.event.inputs.kreversion }}
+          projectPath: '${{ github.workspace }}'
+          args: '-noSplash -retry=0 -testSuitePath="Test Suites/Admin/${{ github.event.inputs.testsuite }}" -browserType= ${{ github.event.inputs.browser }} -executionProfile=default -apiKey= ${{ secrets.API_KEY }} -orgID=${{ secrets.ORG_ID }} -testOpsProjectId=${{ secrets.PROJECT_ID }} --config -webui.autoUpdateDrivers=true'         
+      env:
+       BROWSER: ${{ github.event.inputs.browser }}
+    
+    - name: Katalon upload test report to testOps
+      if: success() || failure()  
+      run: |
+        curl -LO https://github.com/katalon-studio/report-uploader/releases/download/v0.0.8/katalon-report-uploader-0.0.8.jar
+        java -jar katalon-report-uploader-0.0.8.jar --projectId=${{ secrets.PROJECT_ID }} --path=${{ github.workspace }}/Reports --email=${{ secrets.EMAIL }} --password=${{ secrets.PASSWORD }} --type=katalon  
+       
