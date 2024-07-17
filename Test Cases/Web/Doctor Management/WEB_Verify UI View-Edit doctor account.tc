@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>WEB_Verify UI View-Edit doctor account</name>
+   <tag>fast-test,ui,p1</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5aed4039-bb8c-4287-b475-7ddbb072a057</testCaseGuid>
+</TestCaseEntity>

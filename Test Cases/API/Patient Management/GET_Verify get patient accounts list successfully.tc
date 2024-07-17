@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>GET_Verify get patient accounts list successfully</name>
+   <tag>fast-test,api,p1</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e100f40b-5e3d-4eb4-be42-cdac462de004</testCaseGuid>
+</TestCaseEntity>

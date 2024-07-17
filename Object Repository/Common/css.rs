@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>css</name>
+   <tag></tag>
+   <elementGuidId>3840f5b3-95f8-4dde-a4ad-4211b1f69d97</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value> </value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
+         <value>${css}</value>
+      </entry>
+      <entry>
+         <key>IMAGE</key>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>css</name>
+      <type>Main</type>
+      <value>${css}</value>
+      <webElementGuid>1403a374-262e-442a-9c47-53fa05dd2aea</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

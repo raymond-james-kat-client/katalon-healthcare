@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>WEB_Verify View-Edit doctor account successfully</name>
+   <tag>story-test,ui,p2</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>4a4a4f13-5223-4e26-aa9f-5f0674c32700</testCaseGuid>
+</TestCaseEntity>

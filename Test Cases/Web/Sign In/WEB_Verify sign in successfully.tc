@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>WEB_Verify sign in successfully</name>
+   <tag>story-test,ui,p1</tag>
+   <comment></comment>
+   <testCaseGuid>2afa61de-9602-4890-a71b-4e0647480773</testCaseGuid>
+</TestCaseEntity>

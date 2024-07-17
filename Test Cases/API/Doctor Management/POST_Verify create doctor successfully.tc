@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>POST_Verify create doctor successfully</name>
+   <tag>fast-test,api,p2</tag>
+   <comment></comment>
+   <testCaseGuid>878fcd74-e817-4510-8b5d-5a29f3fc18e4</testCaseGuid>
+</TestCaseEntity>

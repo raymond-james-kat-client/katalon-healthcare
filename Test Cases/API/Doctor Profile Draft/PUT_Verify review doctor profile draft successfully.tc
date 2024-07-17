@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>PUT_Verify review doctor profile draft successfully</name>
+   <tag>fast-test,api,p2</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ff78c8b3-22ef-4e1a-aeec-da2f647f0d63</testCaseGuid>
+   <testDataLinks>
+      <combinationType>ONE</combinationType>
+      <id>76c7623e-480e-490b-8c02-1034ca7e6b22</id>
+      <iterationEntity>
+         <iterationType>ALL</iterationType>
+         <value></value>
+      </iterationEntity>
+      <testDataId>Data Files/APIs/Doctor Profile Draft/Review</testDataId>
+   </testDataLinks>
+   <variableLinks>
+      <testDataLinkId>76c7623e-480e-490b-8c02-1034ca7e6b22</testDataLinkId>
+      <type>DATA_COLUMN</type>
+      <value>review</value>
+      <variableId>a44fe3a4-54d9-44e4-9447-b4279eb3c699</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>a44fe3a4-54d9-44e4-9447-b4279eb3c699</id>
+      <masked>false</masked>
+      <name>review</name>
+   </variable>
+</TestCaseEntity>

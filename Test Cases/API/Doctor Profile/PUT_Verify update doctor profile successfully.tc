@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>PUT_Verify update doctor profile successfully</name>
+   <tag>fast-test,api,p1</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>2fc2262a-1fd3-4dbe-8134-d6c99e48e906</testCaseGuid>
+</TestCaseEntity>

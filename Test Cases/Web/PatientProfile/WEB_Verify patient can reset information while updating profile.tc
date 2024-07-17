@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>WEB_Verify patient can reset information while updating profile</name>
+   <tag>story-test,ui,p1</tag>
+   <comment></comment>
+   <testCaseGuid>ff0fa292-48d1-40fe-840b-c50501ab2716</testCaseGuid>
+</TestCaseEntity>

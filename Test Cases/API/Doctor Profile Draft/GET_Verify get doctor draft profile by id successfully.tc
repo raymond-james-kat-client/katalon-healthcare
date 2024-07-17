@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>GET_Verify get doctor draft profile by id successfully</name>
+   <tag>fast-test,api,p1</tag>
+   <comment></comment>
+   <testCaseGuid>9f59952d-eb4c-4b71-9d6c-2ea62c4b832d</testCaseGuid>
+</TestCaseEntity>

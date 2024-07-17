@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>PUT_Verify approve request successfully</name>
+   <tag>fast-test,api,p1</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>16024d66-10ed-4e8d-8942-b183f704aec6</testCaseGuid>
+</TestCaseEntity>
