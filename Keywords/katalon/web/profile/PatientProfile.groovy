@@ -28,17 +28,17 @@ public class PatientProfile extends BasePageWeb<PatientProfile> {
 	}
 
 	public PatientProfile inputFullName(String fullName) {
-		clearTextAndSendKeys(fullNameInput, fullName)
+		clearTextAndSendKeysByActions(fullNameInput, fullName)
 		return this
 	}
 
 	public PatientProfile inputPhoneNumber(String phoneNumber) {
-		clearTextAndSendKeys(phoneNumberInput, phoneNumber)
+		clearTextAndSendKeysByActions(phoneNumberInput, phoneNumber)
 		return this
 	}
 
 	public PatientProfile inputBirthday(String birthday) {
-		clearTextAndSendKeys(birthdayInput, birthday)
+		clearTextAndSendKeysByActions(birthdayInput, birthday)
 		return this
 	}
 
@@ -48,17 +48,17 @@ public class PatientProfile extends BasePageWeb<PatientProfile> {
 	}
 
 	public PatientProfile inputHeight(String height) {
-		clearTextAndSendKeys(heightInput, height)
+		clearTextAndSendKeysByActions(heightInput, height)
 		return this
 	}
 
 	public PatientProfile inputWeight(String weight) {
-		clearTextAndSendKeys(weightInput, weight)
+		clearTextAndSendKeysByActions(weightInput, weight)
 		return this
 	}
 
 	public PatientProfile inputAddress(String address) {
-		clearTextAndSendKeys(addressInput, address)
+		clearTextAndSendKeysByActions(addressInput, address)
 		return this
 	}
 
