@@ -15,7 +15,6 @@ on:
         options:
           - Healthcare Smoke Test
           - Healthcare Regression Test
-          - API Regression Test
       runner:
         description: 'Runner'
         required: true
@@ -62,7 +61,7 @@ jobs:
       with:
           version: ${{ github.event.inputs.kreversion }}
           projectPath: '${{ github.workspace }}'
-          args: '-noSplash -retry=0 -testSuitePath="Test Suites/Admin/${{ github.event.inputs.testsuite }}" -browserType= ${{ github.event.inputs.browser }} -executionProfile=default -apiKey= ${{ secrets.API_KEY }} -orgID=${{ secrets.ORG_ID }} -testOpsProjectId=${{ secrets.PROJECT_ID }} --config -webui.autoUpdateDrivers=true'         
+          args: '-noSplash -retry=0 -testSuitePath="Test Suites/Web/${{ github.event.inputs.testsuite }}" -browserType= ${{ github.event.inputs.browser }} -executionProfile=default -apiKey= ${{ secrets.API_KEY }} -orgID=${{ secrets.ORG_ID }} -testOpsProjectId=${{ secrets.PROJECT_ID }} --config -webui.autoUpdateDrivers=true'         
       env:
        BROWSER: ${{ github.event.inputs.browser }}
     
