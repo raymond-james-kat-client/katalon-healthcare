@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Verify doctor can update profile successfully</name>
+   <tag>story-test,mobile,p1</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>5c49013d-3ec1-4df2-9e26-2d618554db83</testCaseGuid>
+</TestCaseEntity>

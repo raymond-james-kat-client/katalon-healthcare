@@ -64,4 +64,9 @@
       <initValue>''</initValue>
       <name>accessToken</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'/androidapp/healthcare.apk'</initValue>
+      <name>appPath</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

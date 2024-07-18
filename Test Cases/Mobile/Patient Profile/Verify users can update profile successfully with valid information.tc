@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Verify users can update profile successfully with valid information</name>
+   <tag>story-test,mobile,p1</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>515e3978-a73e-4848-8f52-edf4f84fcc38</testCaseGuid>
+   <testDataLinks>
+      <combinationType>ONE</combinationType>
+      <id>b714267f-17c3-4a6d-9296-709ed0899cf5</id>
+      <iterationEntity>
+         <iterationType>ALL</iterationType>
+         <value></value>
+      </iterationEntity>
+      <testDataId>Data Files/Update profile unsuccessfully</testDataId>
+   </testDataLinks>
+</TestCaseEntity>

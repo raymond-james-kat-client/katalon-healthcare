@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Verify user cannot sign up with invalid information</name>
+   <tag>story-test,mobile,p2</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>55a8cdaa-1327-44eb-92a4-a3e12e9322d7</testCaseGuid>
+</TestCaseEntity>
