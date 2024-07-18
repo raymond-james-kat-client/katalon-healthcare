@@ -38,7 +38,7 @@ public class PatientProfile extends BasePageWeb<PatientProfile> {
 	}
 
 	public PatientProfile inputBirthday(String birthday) {
-		clearTextAndSendKeysByActions(birthdayInput, birthday)
+		clearTextAndSendKeys(birthdayInput, birthday)
 		return this
 	}
 
