@@ -85,7 +85,7 @@ public class RandomProfileGenerator {
 	public String generateRandomPhoneNumber() {
 		'Generate a random Vietnamese phone number'
 		def random = new Random();
-		return "+849" + RandomStringUtils.randomNumeric(8)
+		return "+8490" + RandomStringUtils.randomNumeric(7)
 	}
 
 	public String generateRandomWeight() {
@@ -96,13 +96,13 @@ public class RandomProfileGenerator {
 		return RandomStringUtils.randomNumeric(3).replaceFirst("^0+", "")
 	}
 
-	public String generateRandomBirthday() {
+	public String generateRandomBirthday(dateFormat = "yyyy-MM-dd") {
 		LocalDate today = LocalDate.now()
 		Random random = new Random();
 		int daysInThePast = random.nextInt(10000);
 		LocalDate randomBirthday_notformatted = today.minusDays(daysInThePast);
 
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormat);
 		return randomBirthday_notformatted.format(formatter)
 	}
 }

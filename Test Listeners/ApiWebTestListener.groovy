@@ -18,14 +18,11 @@ class ApiWebTestListener {
 			GlobalVariable.isAPIRunning = true
 		if (isWebTestCase(testCaseContext.getTestCaseId()))
 			GlobalVariable.isWebRunning = true
-		if (isFlutterTestCase(testCaseContext.getTestCaseId()))
-			GlobalVariable.isFlutterRunning = true
 	}
 
 	@AfterTestCase
 	def after(TestCaseContext testCaseContext) {
 		GlobalVariable.isAPIRunning = false
-		GlobalVariable.isFlutterRunning = false
 	}
 
 	def isApiTestCase = { String testCaseName ->

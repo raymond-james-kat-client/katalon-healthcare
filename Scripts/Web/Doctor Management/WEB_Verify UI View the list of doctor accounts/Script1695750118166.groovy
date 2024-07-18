@@ -22,9 +22,8 @@ Page.nav(WelcomePage).verifySignInSuccessfully(user.fullName)
 Page.nav(LeftNavBar).clickDoctor()
 
 'Verify pagination'
-Page.nav(Doctor)//.verifyPaginationIsFocus()
+Page.nav(Doctor).verifyPaginationIsFocus("1")
 				.clickFullNameColumnTitle()
 				.verifyFullNameAscIconIsVisible()
 				.clickFullNameColumnTitle()
 				.verifyFullNameDescIconIsVisible()
-				//.verifyPaginationIsFocus()

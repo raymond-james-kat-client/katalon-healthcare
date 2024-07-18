@@ -119,14 +119,8 @@ public class Doctor extends BasePageWeb<Doctor>{
 		String degree = WebUI.getText(id("doctorDegree"))
 		String speciality = WebUI.getText(id("doctorSpeciality"))
 		String birthday = WebUI.getAttribute(xpath("//label[text()='Birthday']/following-sibling::div//input"), "value")
-		String gender = "MALE"
-		List<TestObject> genderTOs = findTestObjects("//input[@name='gender']")
-		for (to in genderTOs) {
-			if(WebUI.verifyElementChecked(to, 0, FailureHandling.CONTINUE_ON_FAILURE)) {
-				gender = WebUI.getAttribute(to, "value")
-				break
-			}
-		}
+		String gender = WebUI.getAttribute(xpath("//span[contains(@class,'check')]//input[@name='gender']"), "value")
+		
 		if(doctor.compare(fullName, birthday, degree, speciality, phoneNumber, gender, address, description))
 			KeywordUtil.markPassed("Doctor profile matches with newest information")
 		else
@@ -389,8 +383,8 @@ public class Doctor extends BasePageWeb<Doctor>{
 		return this
 	}
 
-	public Doctor verifyPaginationIsFocus() {
-		WebUI.verifyElementVisible(css("button[aria-label='page ${currentPage}']"), FailureHandling.CONTINUE_ON_FAILURE)
+	public Doctor verifyPaginationIsFocus(String page = currentPage) {
+		WebUI.verifyElementVisible(css("button[aria-label='page ${page}']"), FailureHandling.CONTINUE_ON_FAILURE)
 		return this
 	}
 }

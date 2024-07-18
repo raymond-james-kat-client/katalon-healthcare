@@ -1,4 +1,4 @@
-import com.kms.katalon.core.annotation.SetUp
+import com.kms.katalon.core.annotation.TearDown
 
 import katalon.android.common.RandomProfileGenerator
 import katalon.fw.lib.Credential
@@ -13,7 +13,7 @@ Credential user = Page.nav(Credential)
 	.getFirst()
 
 'Log in as admin'
-def adminAccessToken = Page.nav(SignInService)
+adminAccessToken = Page.nav(SignInService)
 							  .initRequestObject()
 							  .signIn(user.email, user.pwd)
 							  .getAccessToken()
@@ -25,7 +25,7 @@ def phoneNumber = Page.nav(RandomProfileGenerator).generateRandomPhoneNumber()
 def password = "P@ssw0rd@auto"
 	
 'Create a new doctor to not affect other tc and get doctor uuid'
-def doctorUuid = Page.nav(DoctorManagementService)
+doctorUuid = Page.nav(DoctorManagementService)
 					.initRequestObject()
 					.createDoctor(adminAccessToken, email, fullName, phoneNumber, password)
 					.verifyStatusCode(200)
@@ -54,3 +54,16 @@ Page.nav(DoctorManagementService)
 	.verifyPropertyValue("data.speciality.id", speciality)
 	.verifyPropertyValue("data.degree", degree)
 	.hasProperty("data.id")
+	
+@TearDown
+def tearDown() {
+	'Get account to log in'
+	Credential user = Page.nav(Credential)
+		.getCredentials()
+		.withRole("Doctor")
+		.getFirst()
+	
+	Page.nav(DoctorManagementService)
+	.initRequestObject()
+	.updateDoctorProfile(doctorUuid, user.fullName, user.phoneNumber, user.gender, user.birthday, user.address, user.speciality, user.degree, "", adminAccessToken)
+}
