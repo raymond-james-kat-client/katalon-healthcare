@@ -1,4 +1,4 @@
-name: Run Test by Manual Trigger
+name: Run Healthcare Test by Manual Trigger
 
 on:
   workflow_dispatch:
@@ -6,13 +6,7 @@ on:
       kreversion:
         description: 'KRE Version'
         required: true
-        default: 8.6.9
-        type: choice
-        options:
-          - 8.6.9
-          - 8.6.8
-          - 8.6.6
-          - 8.6.5
+        default: 9.4.0
       testsuite:
         description: 'Test Suite'
         required: true
@@ -51,7 +45,7 @@ on:
 
 jobs:
   manual:
-    name: Execute test by manual trigger
+    name: Execute Healthcare test by manual trigger
     if: ${{ github.event.inputs.browser !='' }}
     runs-on: ${{ github.event.inputs.runner }}
     steps:
