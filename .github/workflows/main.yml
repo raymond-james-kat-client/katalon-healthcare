@@ -7,27 +7,6 @@ on:
         description: 'KRE Version'
         required: true
         default: 9.4.0
-      testsuite:
-        description: 'Test Suite'
-        required: true
-        default: Healthcare Smoke Test
-        type: choice
-        options:
-          - Healthcare Smoke Test
-          - Healthcare Regression Test
-      runner:
-        description: 'Runner'
-        required: true
-        default: windows-latest
-        type: choice
-        options:
-          - windows-latest
-          - windows-2019
-          - macos-13
-          - macos-latest
-          - macos-11
-          - ubuntu-latest
-          - ubuntu-20.04
       browser:
         description: 'Browser'
         required: true
@@ -46,7 +25,7 @@ jobs:
   manual:
     name: Execute Healthcare test by manual trigger
     if: ${{ github.event.inputs.browser !='' }}
-    runs-on: ${{ github.event.inputs.runner }}
+    runs-on: windows-latest
     steps:
 
     - name: Set longpaths globally
@@ -61,7 +40,7 @@ jobs:
       with:
           version: ${{ github.event.inputs.kreversion }}
           projectPath: '${{ github.workspace }}'
-          args: '-noSplash -retry=0 -testSuitePath="Test Suites/Web/${{ github.event.inputs.testsuite }}" -browserType= ${{ github.event.inputs.browser }} -executionProfile=default -apiKey= ${{ secrets.API_KEY }} -orgID=${{ secrets.ORG_ID }} -testOpsProjectId=${{ secrets.PROJECT_ID }} --config -webui.autoUpdateDrivers=true'         
+          args: '-noSplash -retry=0 -testSuitePath="Test Suites/API/API Regression Test" -browserType= ${{ github.event.inputs.browser }} -executionProfile=default -apiKey= ${{ secrets.API_KEY }} -orgID=${{ secrets.ORG_ID }} -testOpsProjectId=${{ secrets.PROJECT_ID }} --config -webui.autoUpdateDrivers=true'         
       env:
        BROWSER: ${{ github.event.inputs.browser }}
     
