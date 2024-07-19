@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Verify doctor cannot update profile with empty information</name>
+   <tag>story-test,mobile,p2</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>4dc49fc4-41ee-40ec-be73-2c9dabba0be2</testCaseGuid>
+</TestCaseEntity>

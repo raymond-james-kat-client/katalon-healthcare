@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>Verify patient can book appointment successfully with 1 available doctor</name>
-   <tag>story-test,mobile,p1</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>a0a10889-b272-4747-951a-ec845b731001</testCaseGuid>
-</TestCaseEntity>

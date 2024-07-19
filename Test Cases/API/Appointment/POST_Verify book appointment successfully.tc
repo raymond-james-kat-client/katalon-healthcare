@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>POST_Verify book appointment successfully</name>
-   <tag>fast-test,api,p2</tag>
-   <comment></comment>
-   <testCaseGuid>ac0dc041-52c9-4db1-830a-cad017f4cdd3</testCaseGuid>
-</TestCaseEntity>
