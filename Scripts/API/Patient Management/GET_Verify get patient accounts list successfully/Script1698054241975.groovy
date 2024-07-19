@@ -63,7 +63,6 @@ Page.nav(PatientManagementService).initRequestObject()
 												"required": [
 												  "id",
 												  "fullName",
-												  "address",
 												  "email",
 												  "phoneNumber",
 												  "activated"
