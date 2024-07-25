@@ -42,3 +42,5 @@ String patientAccessToken = Page.nav(SignInService).initRequestObject()
 Page.nav(PatientProfileService).initRequestObject()
 								.updatePatientProfile(patientAccessToken, user.fullName, user.address, user.birthday, user.phoneNumber, user.gender.toUpperCase(), user.weight, user.height)
 								.verifyStatusCode(200)
+								
+								

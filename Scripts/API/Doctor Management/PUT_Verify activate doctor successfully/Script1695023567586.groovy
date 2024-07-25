@@ -33,3 +33,6 @@ def doctorId = Page.nav(DoctorManagementService)
 Page.nav(DoctorManagementService)
 	.initRequestObject()
 	.activateDoctor(adminAccessToken, doctorId)
+	
+	
+	

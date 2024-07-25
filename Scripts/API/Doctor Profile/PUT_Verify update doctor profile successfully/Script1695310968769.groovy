@@ -41,3 +41,7 @@ Page.nav(DoctorProfileService)
 	.verifyPropertyValue("data.speciality.id", speciality)
 	.verifyPropertyValue("data.degree", degree)
 	.hasProperty("data.id")
+	
+	
+	
+	

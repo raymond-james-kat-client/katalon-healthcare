@@ -51,4 +51,6 @@ def tearDown() {
 											.deactivateSpecialty(token, specialtyUUID)
 											.verifyStatusCode(200)
 	}
-}															
+}
+
+															

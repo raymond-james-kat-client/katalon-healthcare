@@ -50,3 +50,6 @@ Page.nav(MedicinesService)
 		.initRequestObject()
 		.deleteMedicine(adminToken, medicineId)
 		.verifyStatusCode(204)
+		
+		
+		

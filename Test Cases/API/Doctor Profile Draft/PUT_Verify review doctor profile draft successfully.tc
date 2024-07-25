@@ -4,7 +4,6 @@
    <name>PUT_Verify review doctor profile draft successfully</name>
    <tag>fast-test,api,p2</tag>
    <comment></comment>
-   <recordOption>OTHER</recordOption>
    <testCaseGuid>ff78c8b3-22ef-4e1a-aeec-da2f647f0d63</testCaseGuid>
    <testDataLinks>
       <combinationType>ONE</combinationType>

@@ -67,3 +67,5 @@ def tearDown() {
 	.initRequestObject()
 	.updateDoctorProfile(doctorUuid, user.fullName, user.phoneNumber, user.gender, user.birthday, user.address, user.speciality, user.degree, "", adminAccessToken)
 }
+
+

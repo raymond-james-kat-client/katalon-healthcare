@@ -4,6 +4,5 @@
    <name>PUT_Verify update doctor profile successfully</name>
    <tag>fast-test,api,p2</tag>
    <comment></comment>
-   <recordOption>OTHER</recordOption>
    <testCaseGuid>4a265797-f4cc-46bc-91b8-94547b145e35</testCaseGuid>
 </TestCaseEntity>

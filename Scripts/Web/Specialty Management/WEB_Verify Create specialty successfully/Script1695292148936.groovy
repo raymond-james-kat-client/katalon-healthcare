@@ -51,3 +51,4 @@ def tearDown() {
 	
 	Page.nav(SpecialtyManagementService).initRequestObject().deactivateSpecialty(adminAccessToken, specialityId)
 }
+

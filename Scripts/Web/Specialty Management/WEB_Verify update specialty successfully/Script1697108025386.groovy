@@ -48,3 +48,6 @@ String specialtyUUID = Page.nav(SpecialtyManagementService).getSpecialtyId(speci
 Page.nav(SpecialtyManagementService).initRequestObject()
 									.updateSpecialty(adminAccessToken, specialtyUUID, specialtyName, specialtyDescription)
 									.verifyStatusCode(200)
+									
+									
+									

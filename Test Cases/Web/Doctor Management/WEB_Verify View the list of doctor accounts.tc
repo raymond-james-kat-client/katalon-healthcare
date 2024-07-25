@@ -4,6 +4,5 @@
    <name>WEB_Verify View the list of doctor accounts</name>
    <tag>story-test,ui,p1</tag>
    <comment></comment>
-   <recordOption>OTHER</recordOption>
    <testCaseGuid>ed71f607-48da-4b27-8504-9b0963113f8b</testCaseGuid>
 </TestCaseEntity>

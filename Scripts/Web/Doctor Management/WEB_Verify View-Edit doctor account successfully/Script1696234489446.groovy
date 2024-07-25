@@ -64,3 +64,5 @@ Page.nav(Doctor).getDoctorInformationOfRow(row)
 				.clickMoreIcon(row)
 				.clickEditDoctorProfile()
 				.verifyEditDoctorProfileWithDoctorViewList()
+				
+				

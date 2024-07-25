@@ -51,3 +51,5 @@ Page.nav(PatientProfile).inputFullName("new full name")
 						.verifyHeight(patientHeight)
 						.verifyWeight(patientWeight)
 						.verifyAddress(patientAddress)
+						
+						

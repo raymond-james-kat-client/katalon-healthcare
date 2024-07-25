@@ -4,6 +4,5 @@
    <name>POST_Verify admin can create and delete medicine</name>
    <tag>fast-test,api,p1</tag>
    <comment></comment>
-   <recordOption>OTHER</recordOption>
    <testCaseGuid>affb3192-608a-4a7c-a4e3-c5965f2095d0</testCaseGuid>
 </TestCaseEntity>

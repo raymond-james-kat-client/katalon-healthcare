@@ -4,6 +4,5 @@
    <name>PUT_Verify request update medicine successfully</name>
    <tag>fast-test,api,p2</tag>
    <comment></comment>
-   <recordOption>OTHER</recordOption>
    <testCaseGuid>14f1846a-6c04-4c41-a555-624c93a477a8</testCaseGuid>
 </TestCaseEntity>

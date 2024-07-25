@@ -63,3 +63,7 @@ Page.nav(DraftChangesService)
 	.reviewDoctorProfile(review, doctorId, adminToken)
 	.verifyStatusCode(200)
 	.verifyPropertyValue("message", "Review sent successfully")
+	
+	
+	
+	

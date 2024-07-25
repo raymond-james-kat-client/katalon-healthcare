@@ -45,3 +45,5 @@ Page.nav(Doctor).clickFirstPagination()
 				.setPreviousList()
 				.clickLastPagination()
 				.verifyFirstElementNameEqualToLastElementName()
+				
+				

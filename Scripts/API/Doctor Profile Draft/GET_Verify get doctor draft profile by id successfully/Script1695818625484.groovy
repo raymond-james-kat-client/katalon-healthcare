@@ -77,3 +77,6 @@ Page.nav(DraftChangesService)
 	.verifyPropertyValue("data.degree", degree)
 	.verifyPropertyValue("data.description", description)
 	.hasProperty("data.activated")
+	
+	
+	

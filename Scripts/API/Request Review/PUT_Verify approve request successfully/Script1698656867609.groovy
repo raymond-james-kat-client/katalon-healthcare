@@ -68,3 +68,6 @@ Page.nav(MedicinesService).verifyCorrectMedicine(apiMedicine, medicineInfo)
 Page.nav(MedicinesService)
 	.initRequestObject()
 	.deleteMedicine(adminToken, medicineId)
+	
+	
+	

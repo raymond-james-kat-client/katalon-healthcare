@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>WEB_Verify UI View the list of doctor accounts</name>
-   <tag>fast-test,ui,p1</tag>
-   <comment></comment>
-   <testCaseGuid>eb7adc07-2722-4df8-8bac-676975d84782</testCaseGuid>
-</TestCaseEntity>
