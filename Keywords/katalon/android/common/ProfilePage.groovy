@@ -1,27 +1,37 @@
 package katalon.android.common
 
+import static com.kms.katalon.core.testobject.ConditionType.EXPRESSION
+
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.testobject.TestObject
 
 import katalon.fw.lib.BasePageMobile
 
 public class ProfilePage extends BasePageMobile<ProfilePage> {
 
-	def field_fullName = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[1]")
-	def field_phoneNumber = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[2]")
-	def field_address = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[3]")
-	def field_weight = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[4]")
-	def field_height = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[5]")
-	def field_birthday = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[6]")
+	TestObject field_fullName = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[1]")
+	TestObject field_phoneNumber = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[2]")
+	TestObject field_address = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[3]")
+	TestObject field_weight = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[4]")
+	TestObject field_height = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[5]")
+	TestObject field_birthday = xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[6]")
 
+	TestObject btn_increase_weight = xpath("//android.widget.EditText[4]/android.widget.Button[1]")
+	TestObject btn_increase_height = xpath("//android.widget.EditText[5]/android.widget.Button[1]")
+	TestObject btn_decrease_weight = xpath("//android.widget.EditText[4]/android.widget.Button[2]")
+	TestObject btn_decrease_height = xpath("//android.widget.EditText[5]/android.widget.Button[2]")
+	
+	def genderOption = { gender -> xpath("//android.view.View[@content-desc= '$gender']/android.widget.RadioButton") }
+	
 	public ProfilePage verifyCorrectFullName(String expectedFullName) {
 		Mobile.verifyElementText(field_fullName, expectedFullName)
 		return this
 	}
 
 	public ProfilePage verifyCorrectGender(String expectedGender) {
-		verifyElementAttribute(xpath("//android.view.View[@content-desc= '${expectedGender}']/android.widget.RadioButton"), "checked", "true")
+		Mobile.verifyElementAttributeValue(genderOption(expectedGender), "checked", "true", 0)
 		def otherGender = "Male".equals(expectedGender) ? "Female" : "Male"
-		verifyElementAttribute(xpath("//android.view.View[@content-desc= '${otherGender}']/android.widget.RadioButton"), "checked", "false")
+		Mobile.verifyElementAttributeValue(genderOption(otherGender), "checked", "false", 0)
 		return this
 	}
 
@@ -73,7 +83,7 @@ public class ProfilePage extends BasePageMobile<ProfilePage> {
 	}
 
 	public ProfilePage chooseGender(String expectedGender) {
-		checkElement(xpath("//android.view.View[@content-desc= '${expectedGender}']/android.widget.RadioButton"))
+		checkElement(genderOption(expectedGender))
 		return this
 	}
 
@@ -101,34 +111,35 @@ public class ProfilePage extends BasePageMobile<ProfilePage> {
 
 	public ProfilePage setHeight (String height) {
 		tap(field_height)
-		setText(xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[5]"), height)
+		setText(field_height, height)
 		hideKeyboard()
 		return this
 	}
 
 	public ProfilePage tapIncrease1kg () {
-		tap(xpath("//android.widget.EditText[4]/android.widget.Button[1]"))
+		tap(btn_increase_weight)
 		return this
 	}
 
 	public ProfilePage tapDecrease1kg () {
-		tap(xpath("//android.widget.EditText[4]/android.widget.Button[2]"))
+		tap(btn_decrease_weight)
 		return this
 	}
 
 	public ProfilePage tapIncrease1cm () {
-		tap(xpath("//android.widget.EditText[5]/android.widget.Button[1]"))
+		tap(btn_increase_height)
 		return this
 	}
 
 	public ProfilePage tapDecrease1cm () {
-		tap(xpath("//android.widget.EditText[5]/android.widget.Button[2]"))
+		tap(btn_decrease_height)
 		return this
 	}
 
 	public ProfilePage setBirthday(String birthday) {
 		tap(field_birthday)
-		setText(xpath("//android.view.View[@content-desc='Full name\nGender\nCell phone number\nAddress\nWeight (kg)\nHeight (cm)\nBirthday']/android.widget.EditText[5]"), birthday)
+		hideKeyboard()
+		setText(field_birthday, birthday)
 		hideKeyboard()
 		return this
 	}

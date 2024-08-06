@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>Verify user can sign up with valid information</name>
-   <tag>story-test,mobile,p1</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>2c60b34a-4cc0-41ac-afea-2f6635a4284f</testCaseGuid>
-</TestCaseEntity>

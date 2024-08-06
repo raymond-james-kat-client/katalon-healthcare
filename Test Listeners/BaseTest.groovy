@@ -4,6 +4,7 @@ import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.util.internal.PathUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
@@ -16,9 +17,9 @@ class BaseTest {
 	
 	@BeforeTestCase
 	def openApplication(TestSuiteContext testSuiteContext) {
-		if(!GlobalVariable.isAPIRunning & !GlobalVariable.isWebRunning) {
-			def mobileAppPath = PathUtil.absoluteToRelativePath(GlobalVariable.appPath, RunConfiguration.getProjectDir())
-			Mobile.startApplication(mobileAppPath, false)
+		if(GlobalVariable.isMobileRunning) {
+			def mobileAppPath = RunConfiguration.getProjectDir() + GlobalVariable.appPath
+			Mobile.startApplication(mobileAppPath, true)
 		}
 	}
 	
@@ -32,7 +33,7 @@ class BaseTest {
 
 	@AfterTestCase
 	def closeApplication(TestSuiteContext testSuiteContext) {
-		if(!GlobalVariable.isAPIRunning & !GlobalVariable.isWebRunning) {
+		if(GlobalVariable.isMobileRunning) {
 			Mobile.closeApplication()
 		}
 	}

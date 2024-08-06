@@ -5,6 +5,7 @@ import katalon.fw.lib.Credential
 import katalon.fw.lib.Page
 import katalon.services.DoctorManagementService
 import katalon.services.SignInService
+import katalon.services.SpecialtyManagementService
 	
 'Get account to log in'
 Credential user = Page.nav(Credential)
@@ -24,13 +25,15 @@ def fullName = Page.nav(RandomProfileGenerator).generateRandomName()
 def phoneNumber = Page.nav(RandomProfileGenerator).generateRandomPhoneNumber()
 def password = "P@ssw0rd@auto"
 	
-'Create a new doctor to not affect other tc and get doctor uuid'
+'Get doctor uuid'
+user = Page.nav(Credential)
+	.getCredentials()
+	.withRole("Doctor")
+	.getFirst()
+
 doctorUuid = Page.nav(DoctorManagementService)
 					.initRequestObject()
-					.createDoctor(adminAccessToken, email, fullName, phoneNumber, password)
-					.verifyStatusCode(200)
-					.parseResponseBodyToJsonObject()
-					.data.id
+					.getDoctorByName(adminAccessToken, user.fullName)[0].id
 
 'Generate random information'
 fullName = Page.nav(RandomProfileGenerator).generateRandomName()
@@ -63,9 +66,9 @@ def tearDown() {
 		.withRole("Doctor")
 		.getFirst()
 	
+	specialityId = Page.nav(SpecialtyManagementService).getSpecialtyByName(adminAccessToken, user.speciality).id
+		
 	Page.nav(DoctorManagementService)
 	.initRequestObject()
-	.updateDoctorProfile(doctorUuid, user.fullName, user.phoneNumber, user.gender, user.birthday, user.address, user.speciality, user.degree, "", adminAccessToken)
+	.updateDoctorProfile(doctorUuid, user.fullName, user.phoneNumber, user.gender, user.birthday, user.address, specialityId, user.degree, user.description, adminAccessToken)
 }
-
-

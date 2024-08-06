@@ -18,54 +18,70 @@ Credential user = Page.nav(Credential)
 Page.nav(SignInPage)
 	.logIn(user.email, user.pwd)
 
+'Tap profile > Edit profile'
 Page.nav(HomePage)
 	.tapProfilePicture()
 	.tapEditProfileButton()
 	
 def fullName = Page.nav(RandomProfileGenerator).generateRandomName()
-def birthday = Page.nav(RandomProfileGenerator).generateRandomBirthday()
 def gender = Page.nav(RandomProfileGenerator).generateRandomGender()
 def address = Page.nav(RandomProfileGenerator).generateRandomAddress()
-phoneNumber = Page.nav(RandomProfileGenerator).generateRandomPhoneNumber()
+phoneNumber = Page.nav(RandomProfileGenerator).generateRandomPhoneNumber("0")
 def weight = Page.nav(RandomProfileGenerator).generateRandomWeight()
 def height = Page.nav(RandomProfileGenerator).generateRandomHeight()
-	
+
+'Set information'
 Page.nav(ProfilePage)
 	.setFullName(fullName)
 	.chooseGender(gender.toLowerCase().capitalize())
 	.setPhoneNumber(phoneNumber)
 	.setWeight(weight)
 	.setHeight(height)
-	.setBirthday(birthday)
+	
+'Tap save changes'
+'Verify'
+'- Update successfully message is displayed'
+Page.nav(ProfilePage)
 	.tapSaveChanges()
 	.verifyUpdateSuccessfully()
-	.goBackToHomePage()
 	
+'Tap icon Back to Home page'
+Page.nav(ProfilePage)
+	.goBackToHomePage()
+
+'Tap Profile > Edit profile'
 Page.nav(HomePage)
 	.tapProfilePicture()
 	.tapEditProfileButton()
 	
+'Verify'
+'- Correct information'
 Page.nav(ProfilePage)
 	.verifyCorrectFullName(fullName)
 	.verifyCorrectGender(gender.toLowerCase().capitalize())
 	.verifyCorrectPhoneNumber(phoneNumber)
 	.verifyCorrectWeight(weight)
 	.verifyCorrectHeight(height)
-	.verifyCorrectBirthday(birthday.toString())
+	
+'Tap icon to decrease and increase weight'
+'Verify'
+'- Correct weight is displayed'
+Page.nav(ProfilePage)
 	.tapDecrease1kg()
 	.tapIncrease1kg()
 	.tapIncrease1kg()
 	.verifyCorrectWeight((weight.toInteger() + 1).toString())
+	
+'Tap icon to decrease and increase weight'
+'Verify'
+'- Correct weight is displayed'
+Page.nav(ProfilePage)
 	.tapDecrease1cm()
 	.tapDecrease1cm()
 	.tapIncrease1cm()
 	.verifyCorrectHeight((height.toInteger() - 1).toString())
 	.goBackToHomePage()
 
-Page.nav(HomePage)
-	.tapProfilePicture()
-	.tapSignOut()
-	
 @TearDown
 def tearDown() {
 	'Get account'
@@ -81,5 +97,5 @@ def tearDown() {
 	
 	Page.nav(PatientManagementService)
 		.initRequestObject()
-		.updatePatient(accessToken, user.fullName, user.address, user.birthday, user.phoneNumber, user.gender, user.weight, user.height)
+		.updatePatient(accessToken, user.fullName, user.address, user.birthday, user.phoneNumber, user.gender, Long.parseLong(user.weight), Long.parseLong(user.height))
 }

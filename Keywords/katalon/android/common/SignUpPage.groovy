@@ -32,7 +32,7 @@ public class SignUpPage extends BasePageMobile<SignUpPage> {
 	def SignUpPage setPassword(String value) {
 		TestObject to = xpath("//android.view.View[@content-desc='Email\nFull name\nCell phone number\nPassword\nI agree with \nKindly accept the necessary terms & conditions']/android.widget.EditText[4]")
 		tap(to)
-		setText(to, value)
+		setEncryptedText(to, value)
 		hideKeyboard()
 		return this
 	}

@@ -4,5 +4,6 @@
    <name>PUT_Verify activate doctor successfully</name>
    <tag>fast-test,api,p2</tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>0a185336-9f4b-4dcd-8c1f-be07f8bfa75e</testCaseGuid>
 </TestCaseEntity>

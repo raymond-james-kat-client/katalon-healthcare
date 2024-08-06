@@ -14,10 +14,15 @@ class ApiWebTestListener {
 
 	@BeforeTestCase
 	def before(TestCaseContext testCaseContext) {
-		if (isApiTestCase(testCaseContext.getTestCaseId()))
+		if (isApiTestCase(testCaseContext.getTestCaseId())){
 			GlobalVariable.isAPIRunning = true
-		if (isWebTestCase(testCaseContext.getTestCaseId()))
+			return
+		}
+		if (isWebTestCase(testCaseContext.getTestCaseId())) {
 			GlobalVariable.isWebRunning = true
+			return
+		}
+		GlobalVariable.isMobileRunning = true
 	}
 
 	@AfterTestCase

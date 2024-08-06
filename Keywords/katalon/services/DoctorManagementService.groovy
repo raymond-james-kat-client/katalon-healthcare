@@ -1,5 +1,9 @@
 package katalon.services
 
+import java.util.stream.Collectors
+
+import com.kms.katalon.core.util.KeywordUtil
+
 import internal.GlobalVariable
 import katalon.fw.lib.BaseService
 
@@ -30,9 +34,20 @@ public class DoctorManagementService extends BaseService<DoctorManagementService
 		return map
 	}
 
-	public DoctorManagementService getAllDoctors(String token) {
+	public Object getDoctorByName (String token, String name) {
 
-		setUrl(doctorsUrl).setJsonContentTypeHeader()
+		def doctorList = this.initRequestObject().getAllDoctors(token, "1000")
+				.parseResponseBodyToJsonObject()
+				.data.doctors
+
+		def doctor = doctorList.stream().filter({ it -> it.fullName.compareTo(name) == 0 }).collect(Collectors.toList())
+
+		return doctor
+	}
+
+	public DoctorManagementService getAllDoctors(String token, String itemPerPage = "10", String sortBy = "ID", String order = "ASC") {
+
+		setUrl(doctorsUrl + "?itemPerPage=${itemPerPage}&sortBy=${sortBy}&order=$order").setJsonContentTypeHeader()
 				.setBearerAuthorizationHeader(token)
 				.sendGetRequest()
 	}
@@ -40,10 +55,9 @@ public class DoctorManagementService extends BaseService<DoctorManagementService
 	public DoctorManagementService updateDoctorProfile(String uuid, String fullName, String phoneNumber, String gender, String birthday, String address, String speciality, String degree, String description, String token = GlobalVariable.adminAccessToken) {
 
 		def String updateDoctorProfileUrl = GlobalVariable.apiUrl +  "doctors/${uuid}"
-
 		setUrl(updateDoctorProfileUrl).setJsonContentTypeHeader()
 				.setBearerAuthorizationHeader(token)
-				.setPayLoad('{"fullName": "'+fullName+'","phoneNumber": "'+phoneNumber+'","gender": "'+gender+'","birthday": "'+birthday+'","address": "'+address+'","speciality": "'+speciality+'","degree": "'+degree+'","description": "'+description+'"}')
+				.setPayLoad('{"fullName": "'+fullName+'","phoneNumber": "'+phoneNumber.replaceFirst("^0", "+84")+'","gender": "'+gender.toUpperCase()+'","birthday": "'+birthday+'","address": "'+address+'","speciality": "'+speciality+'","degree": "'+degree.toUpperCase().replace(" ", "_")+'","description": "'+description+'"}')
 				.sendPutRequest()
 	}
 

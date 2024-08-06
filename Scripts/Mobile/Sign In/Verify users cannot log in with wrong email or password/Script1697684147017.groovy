@@ -1,4 +1,5 @@
-import internal.GlobalVariable
+import com.kms.katalon.util.CryptoUtil
+
 import katalon.android.common.SignInPage
 import katalon.fw.lib.Credential
 import katalon.fw.lib.Page
@@ -11,7 +12,7 @@ Credential user = Page.nav(Credential)
 
 Page.nav(SignInPage)	
 	.setEmail(user.email)
-	.setPassword('wrongP@ssw0rd')
+	.setPassword(CryptoUtil.encode(CryptoUtil.getDefault('wrongP@ssw0rd')))
 	.tapSignIn()
 	.verifyErrorMessage('Invalid email or password')
 	

@@ -20,6 +20,7 @@ public class Credential {
 	String weight
 	String phoneNumber
 	String birthday
+	String description
 	private List<Credential> filteredCredentials = []
 
 	public Credential() {
@@ -45,6 +46,7 @@ public class Credential {
 					weight = testData.getValue('weight', rowNumber)
 					phoneNumber = testData.getValue('phoneNumber', rowNumber)
 					birthday = testData.getValue('birthday', rowNumber)
+					description = testData.getValue('description', rowNumber)
 					it
 				})
 			})

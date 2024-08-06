@@ -82,10 +82,10 @@ public class RandomProfileGenerator {
 		return RandomStringUtils.randomNumeric(3).replaceFirst("^0+", "") + "/" + RandomStringUtils.randomNumeric(2).replaceFirst("^0+", "") + " " + RandomStringUtils.randomAlphabetic(7)
 	}
 
-	public String generateRandomPhoneNumber() {
+	public String generateRandomPhoneNumber(String phoneFormat = "+84") {
 		'Generate a random Vietnamese phone number'
 		def random = new Random();
-		return "+8490" + RandomStringUtils.randomNumeric(7)
+		return "${phoneFormat}90" + RandomStringUtils.randomNumeric(7)
 	}
 
 	public String generateRandomWeight() {
