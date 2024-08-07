@@ -17,19 +17,18 @@ Page.nav(SignInPage)
 	.tapSignIn()
 	
 "Get user's name to verify correct home page"
-def token = Page.nav(SignInService)
+String token = Page.nav(SignInService)
 				.initRequestObject()
 				.signIn(user.email, user.pwd)
 				.getAccessToken()
 				
-def firstName = Page.nav(PatientProfileService)
+String firstName = Page.nav(PatientProfileService)
 				.initRequestObject()
 				.getPatientProfile(token)
 				.parseResponseBodyToJsonObject()
 				.data.fullName.split(" ")[0]
 	
-Page.nav(HomePage)
-	.verifySignInSuccessfully(firstName)
+Page.nav(HomePage).verifySignInSuccessfully(firstName)
 
 'Sign back out'
 Page.nav(HomePage)
